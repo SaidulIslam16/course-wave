@@ -15,6 +15,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/courses',
+                loader: () => fetch('http://localhost:5000/categories'),
                 element: <CoursesLayout></CoursesLayout>,
                 children: [
                     {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
                         element: <Courses></Courses>
                     }
                 ]
+            },
+            {
+                path: '*',
+                element: <h1 className="text-center text-red-700 font-bold text-3xl">Page Not found!!</h1>
             }
         ]
     }
