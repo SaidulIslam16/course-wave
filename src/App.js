@@ -1,11 +1,14 @@
-import logo from './logo.png';
 import './App.css';
+import { useContext } from 'react';
+import { AuthContext } from './contexts/UserContext';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routers/Router/Router';
 
 function App() {
   return (
-    <div className="App">
-      <h1>hello</h1>
-    </div>
+    <RouterProvider router={router}>
+
+    </RouterProvider>
   );
 }
 
