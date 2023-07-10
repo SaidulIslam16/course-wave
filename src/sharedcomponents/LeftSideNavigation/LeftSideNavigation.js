@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const LeftSideNavigation = ({ category }) => {
+const LeftSideNavigation = () => {
+    const [categories, setCategories] = useState([]);
 
-    const { name, id } = category;
+    useEffect(() => {
+        fetch('http://localhost:5000/categories')
+            .then(res => res.json())
+            .then(data => setCategories(data))
+    }, [])
     return (
         <div>
-            <Link to={`/category/:${id}`}>{name}</Link>
+            <h1>Subjects: {categories.length}</h1>
+            {
+                categories.map(subject =>
+                    <p><Link to={`/courses/category/${subject.id}`} key={subject.id}>{subject.name}</Link></p>
+                )
+            }
         </div>
     );
 };

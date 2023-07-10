@@ -1,15 +1,12 @@
 import React from 'react';
+import './CoursesLayout.css'
 import LeftSideNavigation from '../sharedcomponents/LeftSideNavigation/LeftSideNavigation';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Outlet, } from 'react-router-dom';
 
 const CoursesLayout = () => {
-    const categories = useLoaderData();
-    console.log(categories);
     return (
-        <div>
-            {
-                categories.map(category => <LeftSideNavigation key={category.id} category={category}></LeftSideNavigation>)
-            }
+        <div className="courses px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+            <LeftSideNavigation></LeftSideNavigation>
             <Outlet></Outlet>
         </div>
     );
