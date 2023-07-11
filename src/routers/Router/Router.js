@@ -6,6 +6,7 @@ import Courses from "../../Pages/Courses/Courses";
 import Subjects from "../../Pages/Subjects/Subjects";
 import { CourseDetails } from "../../sharedcomponents/CourseDetails/CourseDetails";
 import { Faq } from "../../Pages/Faqs/Faqs";
+import { Blog } from "../../Pages/Blog/Blog";
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
             {
                 path: '/faqs',
                 element: <Faq></Faq>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             },
             {
                 path: '*',
