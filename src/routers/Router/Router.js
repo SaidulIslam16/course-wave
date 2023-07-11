@@ -4,6 +4,7 @@ import Home from "../../Pages/Home/Home";
 import CoursesLayout from "../../layouts/CoursesLayout";
 import Courses from "../../Pages/Courses/Courses";
 import Subjects from "../../Pages/Subjects/Subjects";
+import { CourseDetails } from "../../sharedcomponents/CourseDetails/CourseDetails";
 
 export const router = createBrowserRouter([
     {
@@ -28,8 +29,14 @@ export const router = createBrowserRouter([
                         path: '/courses/category/:id',
                         element: <Courses></Courses>,
                         loader: ({ params }) => fetch(`http://localhost:5000/courses/category/${params.id}`)
-                    },
+                    }
                 ]
+            },
+
+            {
+                path: '/courses/:id',
+                element: <CourseDetails></CourseDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
             },
             {
                 path: '*',

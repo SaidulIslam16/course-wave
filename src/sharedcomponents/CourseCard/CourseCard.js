@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 export const CourseCard = ({ course }) => {
     console.log(course);
-    const { image, name, price, rating, reviews, short_description } = course;
+    const { image, name, price, rating, reviews, short_description, id } = course;
     return (
         <div className="overflow-hidden  transition-shadow duration-300 bg-white rounded">
-            <Link  >
+            <Link to={`/courses/${id}`}>
                 <img
                     src={image}
                     className="object-cover w-full h-64 rounded"
@@ -16,7 +16,7 @@ export const CourseCard = ({ course }) => {
             </Link>
             <div className="py-5">
                 <Link
-
+                    to={`/courses/${id}`}
                     className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
                 >
                     <p className="text-2xl font-bold leading-7">{name}</p>
