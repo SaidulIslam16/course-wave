@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Register = () => {
     return (
         <div className=' flex justify-center'>
-            <div className='w-96 p-5 border rounded'>
+            <div className='w-96 p-5 border-2 rounded'>
                 <h1 className='text-4xl'>Sign up</h1>
                 <form className='my-6'>
                     <label className="block ">
