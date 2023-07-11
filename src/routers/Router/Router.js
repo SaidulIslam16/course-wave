@@ -7,6 +7,7 @@ import Subjects from "../../Pages/Subjects/Subjects";
 import { CourseDetails } from "../../sharedcomponents/CourseDetails/CourseDetails";
 import { Faq } from "../../Pages/Faqs/Faqs";
 import { Blog } from "../../Pages/Blog/Blog";
+import NotFound from "../../Pages/NotFound/NotFound";
 
 export const router = createBrowserRouter([
     {
@@ -50,7 +51,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '*',
-                element: <h1 className="text-center text-red-700 font-bold text-3xl">Page Not found!!</h1>
+                element: <NotFound></NotFound>
             }
 
         ]
