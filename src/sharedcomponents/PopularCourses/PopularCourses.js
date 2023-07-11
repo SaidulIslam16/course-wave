@@ -2,7 +2,7 @@ import React from 'react';
 import { CourseCard } from '../CourseCard/CourseCard';
 
 export const PopularCourses = ({ popularCourses }) => {
-    console.log(popularCourses);
+    // console.log(popularCourses);
     return (
         <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             <p className="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase sm:text-center">

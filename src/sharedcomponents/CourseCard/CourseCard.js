@@ -3,7 +3,7 @@ import { FaComments, FaStar, FaStarHalfStroke } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
 export const CourseCard = ({ course }) => {
-    console.log(course);
+    // console.log(course);
     const { image, name, price, rating, reviews, short_description, id } = course;
     return (
         <div className="overflow-hidden  transition-shadow duration-300 bg-white rounded">

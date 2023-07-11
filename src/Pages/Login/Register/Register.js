@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/UserContext';
 
 const Register = () => {
+    const { signUp } = useContext(AuthContext);
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signUp(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+            })
+            .catch(e => {
+                console.error(e);
+            })
+    }
+
     return (
         <div className=' flex justify-center'>
             <div className='w-96 p-5 border-2 rounded'>
                 <h1 className='text-4xl'>Sign up</h1>
-                <form className='my-6'>
+                <form onSubmit={handleSubmit} className='my-6'>
                     <label className="block ">
                         <span className=" block text-sm font-medium text-slate-700">
                             Your Name
