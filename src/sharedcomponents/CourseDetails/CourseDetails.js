@@ -19,8 +19,8 @@ export const CourseDetails = () => {
                 </p>
                 <p className="text-2xl font-bold leading-7 mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700">{name}</p>
 
-                <div className='my-4'>
-                    <p className=' text-lg mb-3'>{topics_cover[0].title}</p>
+                <div className='my-6'>
+                    <p className=' text-lg mb-3 bg-violet-200 font-semibold inline-block'>{topics_cover[0].title}</p>
 
                     {
                         topics_cover[1]?.topics?.map(topic => <ul className='bg-slate-100 ps-4 py-2'><li> - {topic}</li></ul>)

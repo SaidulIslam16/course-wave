@@ -5,6 +5,7 @@ import CoursesLayout from "../../layouts/CoursesLayout";
 import Courses from "../../Pages/Courses/Courses";
 import Subjects from "../../Pages/Subjects/Subjects";
 import { CourseDetails } from "../../sharedcomponents/CourseDetails/CourseDetails";
+import { Faq } from "../../Pages/Faqs/Faqs";
 
 export const router = createBrowserRouter([
     {
@@ -39,9 +40,14 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
             },
             {
+                path: '/faqs',
+                element: <Faq></Faq>
+            },
+            {
                 path: '*',
                 element: <h1 className="text-center text-red-700 font-bold text-3xl">Page Not found!!</h1>
             }
+
         ]
     }
 ])
