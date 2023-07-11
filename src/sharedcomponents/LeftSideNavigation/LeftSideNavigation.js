@@ -11,10 +11,10 @@ const LeftSideNavigation = () => {
     }, [])
     return (
         <div>
-            <h1>Subjects: {categories.length}</h1>
+            <h1 className='text-2xl rounded font-bold bg-violet-800 p-5 mr-6 text-white'>Select Subject</h1>
             {
                 categories.map(subject =>
-                    <p><Link to={`/courses/category/${subject.id}`} key={subject.id}>{subject.name}</Link></p>
+                    <p className='hover:text-violet-800 text-lg my-5'><Link to={`/courses/category/${subject.id}`} key={subject.id}>{subject.name}</Link></p>
                 )
             }
         </div>

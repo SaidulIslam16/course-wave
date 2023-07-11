@@ -3,6 +3,7 @@ import Main from "../../layouts/Main";
 import Home from "../../Pages/Home/Home";
 import CoursesLayout from "../../layouts/CoursesLayout";
 import Courses from "../../Pages/Courses/Courses";
+import Subjects from "../../Pages/Subjects/Subjects";
 
 export const router = createBrowserRouter([
     {
@@ -18,10 +19,15 @@ export const router = createBrowserRouter([
                 element: <CoursesLayout></CoursesLayout>,
                 children: [
                     {
+                        path: '/courses',
+                        element: <Subjects></Subjects>,
+                        loader: () => fetch('http://localhost:5000/courses')
+                    },
+                    {
                         path: '/courses/category/:id',
                         element: <Courses></Courses>,
                         loader: ({ params }) => fetch(`http://localhost:5000/courses/category/${params.id}`)
-                    }
+                    },
                 ]
             },
             {
