@@ -47,7 +47,7 @@ export const CourseDetails = () => {
                         {reviews}
                     </p>
                 </div>
-                <Link to='/checkout' className='bg-violet-800 text-xl py-3 px-6 text-white font-semibold mt-5 flex items-center rounded hover:bg-violet-900'>Get Premium Access <span className='ml-4'><FaArrowRight /></span></Link>
+                <p className='inline-block'><Link to='/checkout' className='bg-violet-800  text-xl py-3 px-6 text-white font-semibold mt-5 flex items-center rounded hover:bg-violet-900'>Get Premium Access <span className='ml-4'><FaArrowRight /></span></Link></p>
             </div>
         </div>
 

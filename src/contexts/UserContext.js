@@ -8,6 +8,7 @@ const auth = getAuth(app);
 
 const UserContext = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loader, setLoader] = useState(true);
 
     // signup
     const signUp = (email, password) => {
@@ -38,6 +39,7 @@ const UserContext = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            setLoader(false)
             console.log('user state changed', currentUser);
         })
         return () => unsubscribe();
@@ -50,7 +52,8 @@ const UserContext = ({ children }) => {
         signUp,
         signIn,
         logOut,
-        updateUserInfo
+        updateUserInfo,
+        loader
     };
     return (
         <AuthContext.Provider value={appInfo}>
