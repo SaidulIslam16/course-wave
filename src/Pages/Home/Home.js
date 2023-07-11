@@ -1,11 +1,16 @@
 import React from 'react';
 import { Header } from '../../sharedcomponents/Header/Header';
+import { PopularCourses } from '../../sharedcomponents/PopularCourses/PopularCourses';
+import { useLoaderData } from 'react-router-dom';
+import { Statistic } from '../../sharedcomponents/Statistic/Statistic';
 
 const Home = () => {
+    const popularCourses = useLoaderData();
     return (
         <div>
             <Header></Header>
-            <h1>This is home page</h1>
+            <PopularCourses popularCourses={popularCourses}></PopularCourses>
+            <Statistic></Statistic>
         </div>
     );
 };
