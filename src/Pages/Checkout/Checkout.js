@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../contexts/UserContext';
 import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa6';
 
 const Checkout = () => {
     const { user } = useContext(AuthContext);
@@ -9,7 +10,10 @@ const Checkout = () => {
     return (
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className='w-96 border mx-auto p-5'>
-                <h1 className='text-2xl mb-7 font-semibold'>Continue Checkout</h1>
+                <div className='flex justify-between items-center'>
+                    <h1 className='text-2xl mb-7 font-semibold'>Continue Checkout</h1>
+                    <Link to='/courses'><FaArrowLeft></FaArrowLeft></Link>
+                </div>
                 <label className="block ">
                     <span className=" block text-sm font-medium text-slate-700">
                         Your Name

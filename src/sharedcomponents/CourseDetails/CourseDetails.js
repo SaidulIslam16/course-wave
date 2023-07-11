@@ -4,7 +4,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 export const CourseDetails = () => {
     const course = useLoaderData();
-    const { image, name, topics_cover, price, rating, reviews, details, category } = course;
+    const { image, id, name, topics_cover, price, rating, reviews, details, category } = course;
     return (
         <div className="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12">
 
@@ -47,7 +47,7 @@ export const CourseDetails = () => {
                         {reviews}
                     </p>
                 </div>
-                <p className='inline-block'><Link to='/checkout' className='bg-violet-800  text-xl py-3 px-6 text-white font-semibold mt-5 flex items-center rounded hover:bg-violet-900'>Get Premium Access <span className='ml-4'><FaArrowRight /></span></Link></p>
+                <p className='inline-block'><Link to={`/checkout/${id}`} className='bg-violet-800  text-xl py-3 px-6 text-white font-semibold mt-5 flex items-center rounded hover:bg-violet-900'>Get Premium Access <span className='ml-4'><FaArrowRight /></span></Link></p>
             </div>
         </div>
 
