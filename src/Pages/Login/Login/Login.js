@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa6';
-import { Link, useNavigate, } from 'react-router-dom';
+import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/UserContext';
 import { toast } from 'react-hot-toast';
 
 const Login = () => {
-
     const navigate = useNavigate();
     const { signIn } = useContext(AuthContext);
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -19,7 +21,7 @@ const Login = () => {
                 console.log(result.user);
                 toast.success('Signin Successful')
                 form.reset();
-                navigate('/')
+                navigate(from, { replace: true })
             })
             .catch(e => {
                 console.error(e);

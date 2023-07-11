@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaArrowRight, FaComments, FaStar, FaStarHalfStroke } from "react-icons/fa6";
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 export const CourseDetails = () => {
     const course = useLoaderData();
@@ -47,7 +47,7 @@ export const CourseDetails = () => {
                         {reviews}
                     </p>
                 </div>
-                <button className='bg-violet-800 text-xl py-3 px-6 text-white font-semibold mt-5 flex items-center rounded hover:bg-violet-900'>Get Premium Access <span className='ml-4'><FaArrowRight /></span></button>
+                <Link to='/checkout' className='bg-violet-800 text-xl py-3 px-6 text-white font-semibold mt-5 flex items-center rounded hover:bg-violet-900'>Get Premium Access <span className='ml-4'><FaArrowRight /></span></Link>
             </div>
         </div>
 
