@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/UserContext';
+import { toast } from 'react-hot-toast';
 
 const Register = () => {
     const { signUp } = useContext(AuthContext);
@@ -17,6 +18,8 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+
+                toast.success('Registation successful');
                 form.reset();
             })
             .catch(e => {

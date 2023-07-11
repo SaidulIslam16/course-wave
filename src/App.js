@@ -1,14 +1,16 @@
 import './App.css';
-import { useContext } from 'react';
-import { AuthContext } from './contexts/UserContext';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './routers/Router/Router';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <RouterProvider router={router}>
+    <>
+      <RouterProvider router={router}>
 
-    </RouterProvider>
+      </RouterProvider>
+      <Toaster />
+    </>
   );
 }
 

@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/UserContext';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
 
+    const navigate = useNavigate();
+    const { signIn } = useContext(AuthContext);
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user);
+                toast.success('Signin Successful')
+                navigate('/')
+            })
+            .catch(e => {
+                console.error(e);
+                toast.error(e.message);
+            })
+
     }
 
     return (
