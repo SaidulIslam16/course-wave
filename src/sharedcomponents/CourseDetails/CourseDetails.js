@@ -6,7 +6,7 @@ export const CourseDetails = () => {
     const course = useLoaderData();
     const { image, name, topics_cover, price, rating, reviews, details, category } = course;
     return (
-        <div class="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12">
+        <div className="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12">
 
             <img
                 src={image}

@@ -47,7 +47,7 @@ export const Nav = () => {
                 <div>
                     {
                         user ? <>
-                            <img className='inline-block mr-4' src={user?.photoURL} alt='profile' title={user?.displayName} />
+                            <img className='inline-block mr-4 w-11 rounded-full' src={user?.photoURL} alt='profile' title={user?.displayName} />
                             <button onClick={handleSignOut} className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">Sign out</button>
                         </> :
                             <ul className="flex items-center hidden space-x-8 lg:flex">

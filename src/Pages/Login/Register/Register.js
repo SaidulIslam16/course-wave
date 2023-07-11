@@ -5,20 +5,22 @@ import { AuthContext } from '../../../contexts/UserContext';
 import { toast } from 'react-hot-toast';
 
 const Register = () => {
-    const { signUp } = useContext(AuthContext);
+    const { signUp, updateUserInfo } = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
+        const displayName = form.name.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        console.log(email, password, displayName, photoURL);
 
         signUp(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-
+                updateUserInfo(displayName, photoURL);
                 toast.success('Registation successful');
                 form.reset();
             })
