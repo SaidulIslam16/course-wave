@@ -18,6 +18,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 toast.success('Signin Successful')
+                form.reset();
                 navigate('/')
             })
             .catch(e => {

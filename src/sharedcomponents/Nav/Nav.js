@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from '../../logo.png'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/UserContext';
 
 export const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(e => console.error(e));
+    }
 
     return (
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -36,24 +44,32 @@ export const Nav = () => {
 
                     </ul>
                 </div>
-                <ul className="flex items-center hidden space-x-8 lg:flex">
-                    <li>
-                        <Link to='/login'
+                <div>
+                    {
+                        user ? <>
+                            <img className='inline-block mr-4' src={user?.photoURL} alt='profile' title={user?.displayName} />
+                            <button onClick={handleSignOut} className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">Sign out</button>
+                        </> :
+                            <ul className="flex items-center hidden space-x-8 lg:flex">
+                                <li>
+                                    <Link to='/login'
 
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                            Sign in
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/register'
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                    >
+                                        Sign in
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to='/register'
+                                        className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
 
-                        >
-                            Sign up
-                        </Link>
-                    </li>
-                </ul>
+                                    >
+                                        Sign up
+                                    </Link>
+                                </li>
+                            </ul>
+                    }
+                </div>
                 <div className="lg:hidden">
                     <button
                         aria-label="Open Menu"
