@@ -12,6 +12,7 @@ import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import Checkout from "../../Pages/Checkout/Checkout";
+import PasswordReset from "../../Pages/Login/PasswordReset/PasswordReset";
 
 export const router = createBrowserRouter([
     {
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/resetpassword',
+                element: <PasswordReset></PasswordReset>
             },
             {
                 path: '*',

@@ -82,7 +82,7 @@ const Login = () => {
                 </form>
                 <div className='flex justify-between items-center mt-3'>
                     <p className='hover:text-purple-900 font-semibold'><Link to='/register'>Create an Account</Link></p>
-                    <p className='hover:text-purple-900'><Link>Forget Password</Link></p>
+                    <p className='hover:text-purple-900'><Link to='/resetpassword'>Forget Password</Link></p>
                 </div>
                 <p className='text-center text-gray-500 my-5'>----or----</p>
                 <div className=' flex gap-5'>
