@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/courses/category/02')
+                loader: () => fetch('https://course-wave-server.vercel.app/courses/category/02')
             },
             {
                 path: '/courses',
@@ -31,12 +31,12 @@ export const router = createBrowserRouter([
                     {
                         path: '/courses',
                         element: <Subjects></Subjects>,
-                        loader: () => fetch('http://localhost:5000/courses')
+                        loader: () => fetch('https://course-wave-server.vercel.app/courses')
                     },
                     {
                         path: '/courses/category/:id',
                         element: <Courses></Courses>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/courses/category/${params.id}`)
+                        loader: ({ params }) => fetch(`https://course-wave-server.vercel.app/courses/category/${params.id}`)
                     }
                 ]
             },
@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
             {
                 path: '/courses/:id',
                 element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://course-wave-server.vercel.app/courses/${params.id}`)
             },
             {
                 path: 'checkout/:id',
